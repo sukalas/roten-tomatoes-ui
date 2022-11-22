@@ -1,0 +1,12 @@
+@use "movie-list";
+@use "search";
+@use "utilities/variables";
+
+html,
+body {
+  margin: 0;
+}
+body {
+  // random(300)
+  background-color: variables.$body--bg-color;
+}

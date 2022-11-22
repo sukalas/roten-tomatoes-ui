@@ -1,0 +1,35 @@
+/*  
+Inspired from https://codepen.io/nicohood/pen/dyWzvJN
+and https://stackoverflow.com/questions/70077403/css-for-star-ratings
+*/
+
+// Star definitions
+%star-rating {
+  [data-star] {
+    font-style: normal;
+    display: inline-block;
+    position: relative;
+    unicode-bidi: bidi-override;
+  }
+  [data-star]::before {
+    display: block;
+    content: "★★★★★★★★★★";
+    color: #ddd;
+  }
+  [data-star]::after {
+    position: absolute;
+    top: 0;
+    content: "★★★★★★★★★★";
+    width: 0;
+    color: orange;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+  }
+
+  @for $i from 1 through 10 {
+    [data-star^="#{$i}"]::after {
+      width: #{$i * 10 + "%"};
+    }
+  }
+}
