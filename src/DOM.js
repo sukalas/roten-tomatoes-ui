@@ -19,6 +19,12 @@ const DOM = (() => {
     document.body.querySelector(".movies-list__container").append(fragment); // Drawing DOM only once per iteration loop
   };
   const appendMovieDetails = () => {
+    const moveDetailsPrevious = document
+      .getElementById(`movie-${State.movie.id}`)
+      .querySelector(".movie__details");
+    if (moveDetailsPrevious) {
+      return;
+    }
     const div = document.createElement("div");
     div.classList.add("movie__details");
     div.innerHTML = _templates.detailsContent();
