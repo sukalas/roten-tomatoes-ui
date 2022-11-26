@@ -5,19 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MovieRama MOVIE list</title>
-    <script defer async src="src/State.js"></script>
-    <script defer async src="src/Main.js"></script>
-    <script defer async src="src/API.js"></script>
-    <script defer async src="src/DOM.js"></script>
-    <script defer async src="src/Helpers.js"></script>
+    <script type="module" src="src/Main.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <!-- https://stackoverflow.com/questions/39152877/consider-marking-event-handler-as-passive-to-make-the-page-more-responsive -->
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/default-passive-events"
-    ></script>
   </head>
-  <body onload="Main.init()">
+  <body>
     <nav class="search">
       <input
         class="search__input"

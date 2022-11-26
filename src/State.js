@@ -1,29 +1,22 @@
-const State = (() => {
-  this.keyword = {
+export const State = {
+  keyword: {
     key: "",
-  };
-  this.movie = {
+  },
+  movie: {
     id: "",
     videos: {},
     similar: {},
     reviews: {},
-  };
-  this.movies = {
+  },
+  movies: {
     results: [],
     page: 1,
-  };
-  this.dates = {
+  },
+  dates: {
     maximum: "",
     minimum: "",
-  };
-  this.genres = {
+  },
+  genres: {
     types: [],
-  };
-
-  return {
-    movie: this.movie,
-    movies: this.movies,
-    genres: this.genres,
-    keyword: this.keyword,
-  };
-})();
+  },
+};
