@@ -2,11 +2,38 @@ import { State } from "./State.js";
 import { toggleDetailedView } from "./Main.js";
 import { escapeSpecialCharacters } from "./Helpers.js";
 
-/* OTHER VARIABLES */
-const fragment = new DocumentFragment(); // Using fragment reduces the DOM drawing iterations
-const posterBaseURL = "https://image.tmdb.org/t/p/";
-let similarMoviesParentHTML,
-  similarMovieParentHTML = "";
+  const appendMovieList = ({ data, data2 }) => {
+    for (let i = 0; i < data.length; i++) {
+      const article = document.createElement("article");
+      article.classList.add("movie");
+      article.id = "movie-" + data[i].id;
+      article.addEventListener("click", (e) => {
+        e.stopPropagation();
+        Main.toggleDetailedView(e);
+      });
+      fragment.append(article);
+      const html = _templates.articleContent(data[i], data2, i);
+      fragment.querySelectorAll("article")[i].innerHTML = html;
+    }
+    document.body.querySelector(".movies-list__container").append(fragment); // Drawing DOM only once per iteration loop
+  };
+  const appendMovieDetails = () => {
+    const div = document.createElement("div");
+    div.classList.add("movie__details");
+    div.innerHTML = _templates.detailsContent();
+    document.body.querySelector(`#movie-${State.movie.id}`).append(div);
+  };
+  const _templates = {
+    articleContent: (data) => {
+      const dateObj = new Date(data.release_date);
+      const year = dateObj.getFullYear();
+      const genreStringHTML = _filterGenreList(data.genre_ids);
+      const poster_path = data.poster_path
+        ? data.poster_path
+        : data.backdrop_path;
+      const posterBackground = poster_path
+        ? `style="background-image: url(${posterBaseURL}w500${poster_path}"`
+        : "";
 
 const _templates = {
   articleContent: (data) => {
