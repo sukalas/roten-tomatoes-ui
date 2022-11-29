@@ -1,7 +1,8 @@
 import { State } from "./State.js";
 
 /* API CONSTANT DATA */
-const APIKey = "bc50218d91157b1ba4f142ef7baaa6a0"; // Should use .env file in a node server
+const API_KEY_URL = "http://127.0.0.1:3000/api/key";
+const APIKey = await State.getKey(API_KEY_URL);
 let page_num = 1;
 const APIBaseURL = "https://api.themoviedb.org/3";
 const APIKeyURL = `?api_key=${APIKey}`;

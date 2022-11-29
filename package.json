@@ -1,19 +1,24 @@
 {
   "name": "movierama",
   "version": "1.0.0",
-  "description": "A simple interface to showcase vanillia js practices and experience",
-  "main": "API.js",
-  "type": "module",
+  "description": "A simple interface to showcase vanilia js practices and experience",
+  "type:": "module",
   "scripts": {
-    "serve": "live-server .",
-    "scss:watch": "sass --watch src/scss/main.scss style.css",
+    "serve": "node server.js",
+    "scss:watch": "sass --watch src/scss/main.scss src/style.css",
     "dev": "concurrently \"npm run serve\" \"npm run scss:watch\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.5.0",
-    "live-server": "^1.1.0",
-    "node-sass": "^8.0.0"
+    "dotenv": "^16.0.3",
+    "node-sass": "^8.0.0",
+    "sass": "^1.56.1",
+    "serve": "^14.1.2"
+  },
+  "dependencies": {
+    "css-loader": "^6.7.2",
+    "style-loader": "^3.3.1"
   }
 }

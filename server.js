@@ -35,22 +35,24 @@ const prepareFile = async (url) => {
   return { found, ext, stream };
 };
 
-http
-  .createServer(async (req, res) => {
-    const file = await prepareFile(req.url);
-    const statusCode = file.found ? 200 : 404;
-    const mimeType = MIME_TYPES[file.ext] || MIME_TYPES.default;
-    res.writeHead(statusCode, { "Content-Type": mimeType });
-    file.stream.pipe(res);
-    console.log(`${req.method} ${req.url} ${statusCode}`);
+const server = http.createServer(async (req, res) => {
+  const file = await prepareFile(req.url);
+  const statusCode = file.found ? 200 : 404;
+  const mimeType = MIME_TYPES[file.ext] || MIME_TYPES.default;
+  res.writeHead(statusCode, { "Content-Type": mimeType });
+  file.stream.pipe(res);
+  console.log(`${req.method} ${req.url} ${statusCode}`);
 
-    if (req.url === "/api/key" && req.method === "GET") {
-      // set the status code, and content-type
-      res.writeHead(200, { "Content-Type": "application/json" });
-      // send the data
-      res.end(process.env.API_KEY);
-    }
-  })
-  .listen(PORT);
+  if (req.url === "/api/key" && req.method === "GET") {
+    // set the status code, and content-type
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    // send the data
+    res.end(JSON.stringify(process.env.API_KEY));
+  }
+});
 
-console.log(`Server running at http://127.0.0.1:${PORT}/`);
+server.on("listening", () => {
+  console.log(`ok, server is running at: http://127.0.0.1:${PORT}/`);
+});
+
+server.listen(PORT);

@@ -19,4 +19,12 @@ export const State = {
   genres: {
     types: [],
   },
+  getKey: async (URL) => {
+    return fetch(URL)
+      .then((res) => {
+        return res.text();
+      })
+      .then((data) => JSON.parse(data))
+      .catch((err) => console.error(err));
+  },
 };

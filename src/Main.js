@@ -87,6 +87,7 @@ const _stopPlayingIframes = () => {
 
 // INITIALIZING
 const init = async () => {
+  console.log("Initialized!");
   const playigNowMoviesPromise = _fetch("nowPlayingMovies");
   const genresListPromise = _fetch("genreMovieList");
   Promise.all([playigNowMoviesPromise, genresListPromise]).then(
@@ -139,4 +140,5 @@ const toggleDetailedView = (e) => {
 
 export { init, toggleDetailedView };
 
-document.addEventListener("DOMContentLoaded", init);
+if (document.readyState !== "loading") init();
+else document.addEventListener("DOMContentLoaded", init);
