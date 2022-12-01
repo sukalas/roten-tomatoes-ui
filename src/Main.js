@@ -3,6 +3,8 @@ import { State } from "./State.js";
 import { appendMovieList, appendMovieDetails } from "./DOM.js";
 import { scrolledToTheBottom } from "./Helpers.js";
 
+import "./../src/scss/main.scss";
+
 // FETCHING
 const _fetch = async (URL) => {
   return await get(URL);
@@ -87,7 +89,6 @@ const _stopPlayingIframes = () => {
 
 // INITIALIZING
 const init = async () => {
-  console.log("Initialized!");
   const playigNowMoviesPromise = _fetch("nowPlayingMovies");
   const genresListPromise = _fetch("genreMovieList");
   Promise.all([playigNowMoviesPromise, genresListPromise]).then(

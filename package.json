@@ -4,18 +4,34 @@
   "description": "A simple interface to showcase vanilia js practices and experience",
   "type:": "module",
   "scripts": {
-    "serve": "node server.js",
-    "scss:watch": "sass --watch src/scss/main.scss src/style.css",
+    "serve": "webpack serve",
+    "test": "jasmine",
+    "transpile": "babel src --out-dir dist",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "scss:watch": "sass --watch src/scss/main.scss src/css/style.css",
     "dev": "concurrently \"npm run serve\" \"npm run scss:watch\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.0",
     "concurrently": "^7.5.0",
     "dotenv": "^16.0.3",
+    "dotenv-webpack": "^8.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.0",
     "node-sass": "^8.0.0",
+    "npm": "^9.1.2",
     "sass": "^1.56.1",
-    "serve": "^14.1.2"
+    "sass-loader": "^13.2.0",
+    "serve": "^14.1.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "css-loader": "^6.7.2",
