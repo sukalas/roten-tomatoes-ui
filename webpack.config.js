@@ -36,10 +36,6 @@ module.exports = {
       favicon: "./src/assets/favicon.ico",
       template: "./src/index.html",
     }),
-    new HtmlWebpackPlugin({
-      filename: "404.html",
-      template: "./src/assets/404.html",
-    }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),

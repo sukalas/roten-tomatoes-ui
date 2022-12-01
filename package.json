@@ -5,8 +5,6 @@
   "type:": "module",
   "scripts": {
     "serve": "webpack serve",
-    "test": "jasmine",
-    "transpile": "babel src --out-dir dist",
     "watch": "webpack --watch",
     "build": "webpack",
     "scss:watch": "sass --watch src/scss/main.scss src/css/style.css",
