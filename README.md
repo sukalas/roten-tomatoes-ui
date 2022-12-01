@@ -1,8 +1,8 @@
 # Roten Tomatoes interface
 
-## 1. Add an .env file in the root directory with the property ` API_KEY=<YOUR_KEY>>`
+### 1. Add an .env file in the root directory with the property ` API_KEY=<YOUR_KEY>>`
 
-## 2. Make sure you have the latest node and npm version installed
+### 2. Make sure you have the latest node and npm version installed
 
 ### 3. Run `npm i` to install all the dependencies
 
