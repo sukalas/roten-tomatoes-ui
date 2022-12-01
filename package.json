@@ -5,8 +5,6 @@
   "type:": "module",
   "scripts": {
     "serve": "webpack serve",
-    "test": "jasmine",
-    "transpile": "babel src --out-dir dist",
     "watch": "webpack --watch",
     "build": "webpack",
     "scss:watch": "sass --watch src/scss/main.scss src/css/style.css",
@@ -20,6 +18,7 @@
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.0",
     "concurrently": "^7.5.0",
+    "css-loader": "^6.7.2",
     "dotenv": "^16.0.3",
     "dotenv-webpack": "^8.0.1",
     "html-webpack-plugin": "^5.5.0",
@@ -29,12 +28,9 @@
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "serve": "^14.1.2",
+    "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0",
     "webpack-dev-server": "^4.11.1"
-  },
-  "dependencies": {
-    "css-loader": "^6.7.2",
-    "style-loader": "^3.3.1"
   }
 }
