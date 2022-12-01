@@ -6,6 +6,6 @@
 
 ### 3. Run `npm i` to install all the dependencies
 
-### 4. Run npm run dev to see the UI in action locally
+### 4. Run `npm run dev` to see the UI in action locally
 
-### 5. Run npm run build to bundle the project for production to dist/ directory
+### 5. Run `npm run build` to bundle the project for production to dist/ directory
