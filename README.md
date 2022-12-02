@@ -1,6 +1,6 @@
 ## A simple themoviedb UI with infinite scrolling, search and detailed view per movie
 
-### 1.If you don't already have a themoviedb API key go to www.themoviedb.org and request a new key, otherwise go to step 2
+### 1. If you don't already have a themoviedb API key go to www.themoviedb.org and request a new key, otherwise go to step 2
 
 ### 2. Add an .env file in the root directory with the property ` API_KEY=<YOUR_API_KEY>>`
 
